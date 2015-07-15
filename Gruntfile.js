@@ -419,7 +419,60 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    //Dalek Tasks
+    dalek: {
+      dist: {
+        src: ['dalek/50mmfauxwoodwhite.js']
+      },
+      options: {
+        browser : ['chrome'],
+        reporter: ['console', 'json'],
+        dalekfile: false,
+        advanced: {
+          'json-reporter': {
+            'dest': 'app/scripts/reports/report-<%= grunt.template.today("dd-mm-yyyy") %>.json'
+          }
+        }
+      }
+    },
+
+
+
+    couchdb: {
+    dist: {
+      src:    'app/scripts/reports/report-<%= grunt.template.today("dd-mm-yyyy") %>.json',
+      dest:   'http://chilly.iriscouch.com/datascrap'
+    },
+  },
+
+
+
+
+    'couch-push': {
+    options: {
+      user: 'chilly',
+      pass: 'donkeycheeks'
+    },
+    localhost: {
+      files: {
+        'http://chilly.iriscouch.com/datascrap': 'app/scripts/reports/report-<%= grunt.template.today("dd-mm-yyyy") %>.json'
+      }
     }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
   });
 
 
@@ -474,4 +527,11 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.registerTask('steal', [
+    'dalek',
+    'couch-push'
+  ]);
+
+
 };

@@ -4,6 +4,7 @@
   "dependencies": {},
   "repository": {},
   "devDependencies": {
+    "couchdb": "^0.3.8",
     "dalek-browser-chrome": "0.0.11",
     "dalek-reporter-html": "0.0.4",
     "dalek-reporter-json": "0.0.2",
@@ -21,6 +22,8 @@
     "grunt-contrib-jshint": "^0.11.0",
     "grunt-contrib-uglify": "^0.7.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-couch": "^1.4.0",
+    "grunt-dalek": "^0.2.0",
     "grunt-filerev": "^2.1.2",
     "grunt-google-cdn": "^0.4.3",
     "grunt-karma": "^0.11.2",

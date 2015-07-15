@@ -1,0 +1,5 @@
+
+
+
+
+curl -X POST -d @report-15-07-2015.json http://chilly:donkeycheeks@chilly.iriscouch.com/datascrap/_bulk_docs -H "Content-Type: application/json"

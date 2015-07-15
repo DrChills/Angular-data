@@ -1,0 +1,23 @@
+{
+    "docs": [
+        {
+            "name": "b2g",
+            "date": 1436974737338,
+            "actions": [
+                {
+                    "value": "Classics Simply White Faux Wood Blind - 50mm Slat\nfrom £13.95"
+                },
+                {
+                    "value": "£45.17"
+                }
+            ]
+        }
+    ],
+    "elapsedTime": {
+        "seconds": 14.975077786
+    },
+    "status": false,
+    "assertions": 2,
+    "assertionsFailed": 2,
+    "assertionsPassed": 0
+}
