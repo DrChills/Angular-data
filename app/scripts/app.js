@@ -48,15 +48,30 @@ angular
 
 
   .constant('appSettings', {
-    db: 'scripts/reports/'
+    //db: 'scripts/reports/'
+    dblive: 'https://chilly.iriscouch.com/fauxwood50mm/_design/filtered/_view/filtered'
+    //http://127.0.0.1:5984/hipster/_design/instock/_view/instock
   })
   .controller('mainCtrl',  ['appSettings', '$http', '$scope', function(appSettings, $http, $scope) {    
   // console.log(appSettings);
- $http.get(appSettings.db + 'report' + '-15-07-2015' + '.json')
+ //$http.get(appSettings.db + 'report' + '-15-07-2015' + '.json')
+ // .success(function (data) {
+ // $scope.test = data;
+ //    console.log($scope.test);
+ //});
+
+  $http.get(appSettings.dblive)
    .success(function (data) {
-   $scope.test = data;
-      console.log($scope.test);
-});
+   $scope.test = data.rows;
+      //console.log($scope.test);
+  });
+
+
+
+
+
+
+
 //var myRedObjects = $filter('filter')(myObjects, { color: "red" });
 
   $scope.labels = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];

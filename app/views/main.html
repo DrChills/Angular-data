@@ -4,15 +4,16 @@
 <div ng-controller="mainCtrl">
 
 
-<!-- {{test}}
- -->
+<!-- {{test}} -->
+ 
 
  120 x 120: 
-<div ng-repeat="a in test">
- {{a.name}} : 
-  <span ng-repeat="ob in a.actions">
-      {{ob.value}}
-  </span>
+<div ng-repeat="v in test[value]">
+  {{v}} 
+
+<!--  <span ng-repeat="ob in v.value.actions"> 
+    {{ob.value}} 
+</span>  -->
 </div> 
 
 
